@@ -1,4 +1,3 @@
-
 package de.uniba.dsg.soa;
 
 import java.net.MalformedURLException;
@@ -17,7 +16,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "HistoryService", targetNamespace = "http://uniba.de/dsg/soa/", wsdlLocation = "file:/C:/Users/Administrator/Desktop/Vorlesungen/SOA%2013/WS/wsimport-client/plain-style/metadata/historyservice.wsdl")
+@WebServiceClient(name = "HistoryService", targetNamespace = "http://uniba.de/dsg/soa/", wsdlLocation = "file:/C:/Users/Administrator/Documents/GitHub/jaxws-samples/wsimport-client/plain-style/metadata/historyservice.wsdl")
 public class HistoryService
     extends Service
 {
@@ -30,7 +29,7 @@ public class HistoryService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/Users/Administrator/Desktop/Vorlesungen/SOA%2013/WS/wsimport-client/plain-style/metadata/historyservice.wsdl");
+            url = new URL("file:/C:/Users/Administrator/Documents/GitHub/jaxws-samples/wsimport-client/plain-style/metadata/historyservice.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -4,18 +4,21 @@
 			<xsd:import namespace="http://uniba.de/dsg/soa/" schemaLocation="historyservice.xsd"/>
 		</xsd:schema>
 	</types>
+	
 	<message name="getCancellors">
 		<part name="parameters" element="tns:getCancellors"/>
 	</message>
 	<message name="getCancellorsResponse">
 		<part name="parameters" element="tns:getCancellorsResponse"/>
 	</message>
+	
 	<portType name="History">
 		<operation name="getCancellors">
 			<input wsam:Action="http://uniba.de/dsg/soa/History/getCancellorsRequest" message="tns:getCancellors"/>
 			<output wsam:Action="http://uniba.de/dsg/soa/History/getCancellorsResponse" message="tns:getCancellorsResponse"/>
 		</operation>
 	</portType>
+	
 	<binding name="HistoryPortBinding" type="tns:History">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 		<operation name="getCancellors">
@@ -28,6 +31,7 @@
 			</output>
 		</operation>
 	</binding>
+	
 	<service name="HistoryService">
 		<port name="HistoryPort" binding="tns:HistoryPortBinding">
 			<soap:address location="http://localhost:8080/java-first-custom/HistoryService"/>

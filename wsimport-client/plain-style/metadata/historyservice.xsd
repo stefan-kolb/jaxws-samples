@@ -9,6 +9,7 @@
 			<xs:element name="to" type="xs:dateTime" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
+	
 	<xs:complexType name="getCancellorsResponse">
 		<xs:sequence>
 			<xs:element name="cancellor" type="tns:cancellor" minOccurs="0" maxOccurs="unbounded"/>
@@ -23,4 +24,5 @@
 			<xs:element name="to" type="xs:dateTime" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
+	
 </xs:schema>
