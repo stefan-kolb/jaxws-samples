@@ -1,0 +1,75 @@
+﻿<project name="rpc-lit-style" default="compile" basedir=".">
+	<!-- Environment -->
+  <property file="../../sample.properties"/>
+	<property name="gf.passfile" value="../../passfile"/>
+		
+  <property name="build.dir" location ="${basedir}/build"/>
+  <property name="build.classes.dir" location ="${build.dir}/classes"/>
+  <property name="src.dir" location ="${basedir}/src"/>
+
+	<property name="warFile" value="greetings-rpc-literal"/>
+	
+	<!-- App Server -->
+	<presetdef name="asadmin">
+		<java jar="${javaee.home}/modules/admin-cli.jar" fork="true" jvm="${java.home}/bin/java" >
+			<arg line="--port ${javaee.adminserver.port} --user admin -W ${gf.passfile}" />
+		</java>
+	</presetdef>
+		
+	<target name="start-glassfish">
+		<asadmin failonerror="true">
+			<arg value="start-domain" />
+		</asadmin>
+    <waitfor>
+     	<http url="http://${javaee.server.name}:${javaee.server.port}"/>
+    </waitfor>
+	</target>
+	
+  <target name="stop-glassfish">
+    <asadmin failonerror="true">
+      <arg line="stop-domain"/>
+    </asadmin>
+  </target>
+	
+  <target name="restart-glassfish" depends="stop-glassfish, start-glassfish" />
+	
+	<target name="deploy">
+		<asadmin failonerror="true">
+			<arg value="deploy" />
+			<arg value="--force=true" />
+			<arg value="${build.dir}/${warFile}.war" />
+		</asadmin>
+	</target>
+
+	<target name="undeploy">
+		<asadmin failonerror="true">
+			<arg value="undeploy" />
+			<arg value="${warFile}" />
+		</asadmin>
+	</target>
+
+	<target name="redeploy" depends="undeploy,deploy" />
+	
+	<!-- Build -->
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+	</target>
+		
+	<target name="clean">
+    <delete dir="${build.classes.dir}"/>
+    <delete dir="${build.dir}"/>
+  </target>
+		
+  <target name="compile" depends="clean, init">
+		<javac destdir="${build.classes.dir}" debug="true" fork="true" encoding="utf-8" includeantruntime="false">
+      <src path="${src.dir}"/>
+    </javac>
+			
+		<war destfile="${build.dir}/${warFile}.war" needxmlfile="false">
+			<classes dir="${build.classes.dir}"/>
+			<webinf dir="${basedir}" includes="**/*.wsdl"/>
+		</war>
+  </target>
+
+</project>

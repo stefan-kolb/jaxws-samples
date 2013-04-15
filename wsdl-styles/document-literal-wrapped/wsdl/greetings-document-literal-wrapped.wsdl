@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Greetings"
+	targetNamespace="http://uniba.de/dsg/soa/"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:tns="http://uniba.de/dsg/soa/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+	<types>
+		<xsd:schema targetNamespace="http://uniba.de/dsg/soa/">
+			<xsd:element name="greet">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="greetResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="greeting" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</types>
+	
+	<message name="GreetingsRequest">
+    <part name="params" element="tns:greet"/>
+  </message>
+  <message name="GreetingsResponse">
+    <part name="params" element="tns:greetResponse"/>
+  </message>
+ 
+  <portType name="GreetingsPortType">
+    <operation name="greet">
+		  <input message="tns:GreetingsRequest"/>
+      <output message="tns:GreetingsResponse"/>
+    </operation>
+  </portType>
+   
+  <binding name="GreetingsBinding" type="tns:GreetingsPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="greet">
+      <soap:operation soapAction="http://uniba.de/dsg/soa/greet"/>
+			<input>
+        <soap:body use="literal"/>
+      </input>
+			<output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+ 
+	<service name="GreetingsService">
+		<port binding="tns:GreetingsBinding" name="GreetingsPort">
+      <soap:address location="http://localhost:8080/greetings-document-literal-wrapped/GreetingsService"/>
+    </port>
+  </service>
+</definitions>

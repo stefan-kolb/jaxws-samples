@@ -1,0 +1,67 @@
+﻿<project name="tomcat-style" default="compile" basedir=".">
+	<!-- Environment -->
+  <property file="../../sample.properties"/>
+		
+  <property name="build.dir" location ="${basedir}/build"/>
+  <property name="build.classes.dir" location ="${build.dir}/classes"/>
+  <property name="src.dir" location ="${basedir}/src"/>
+
+	<property name="warFile" value="greetings-tomcat"/>
+	
+	<!-- App Server -->
+	<target name="start-tomcat">
+		<!-- JAX-WS libs for Tomcat -->
+		<copy todir="${tomcat.home}/lib">
+			<fileset dir="${basedir}/lib"/>
+		</copy>
+		
+		<java classname="org.apache.catalina.startup.Bootstrap" fork="true" spawn="true">
+      <classpath path="${tomcat.home}/bin/bootstrap.jar:${tomcat.home}/bin/tomcat-juli.jar" />
+      <jvmarg value="-Dcatalina.home=${tomcat.home}" />
+			<arg line="start" />
+		</java>
+	</target>
+	
+	<target name="stop-tomcat">
+		<java classname="org.apache.catalina.startup.Bootstrap" fork="true">
+			<classpath path="${tomcat.home}/bin/bootstrap.jar:${tomcat.home}/bin/tomcat-juli.jar" />
+      <jvmarg value="-Dcatalina.home=${tomcat.home}" />
+			<arg line="stop" />
+		</java>
+  </target>
+	
+  <target name="restart-tomcat" depends="stop-tomcat, start-tomcat" />
+	
+	<target name='deploy'>
+    <copy todir='${tomcat.home}/webapps/' file='${build.dir}/${warFile}.war'/>
+  </target>
+
+	<target name="undeploy">
+		<delete verbose='true' dir='${deploy.dir}/${warFile}'/>
+	</target>
+
+	<target name="redeploy" depends="undeploy,deploy" />
+	
+	<!-- Build -->
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+	</target>
+		
+	<target name="clean">
+    <delete dir="${build.classes.dir}"/>
+    <delete dir="${build.dir}"/>
+  </target>
+		
+  <target name="compile" depends="clean, init">
+		<javac destdir="${build.classes.dir}" debug="true" fork="true" encoding="utf-8" includeantruntime="false">
+      <src path="${src.dir}"/>
+    </javac>
+			
+		<war destfile="${build.dir}/${warFile}.war">
+			<classes dir="${build.classes.dir}"/>
+			<webinf dir="${basedir}/metadata"/>
+		</war>
+  </target>
+
+</project>

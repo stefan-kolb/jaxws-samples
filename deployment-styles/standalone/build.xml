@@ -1,0 +1,43 @@
+﻿<project name="standalone-style" default="compile" basedir=".">
+	<!-- Environment -->
+  <property file="../../sample.properties"/>
+	
+  <property name="build.dir" location ="${basedir}/build"/>
+  <property name="build.classes.dir" location ="${build.dir}/classes"/>
+  <property name="src.dir" location ="${basedir}/src"/>
+	
+	<property name="jarFile" value="greetings-standalone"/>
+		
+	<!-- Build -->
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+	</target>
+		
+	<target name="clean">
+    <delete dir="${build.classes.dir}"/>
+    <delete dir="${build.dir}"/>
+  </target>
+		
+  <target name="compile" depends="clean, init">
+		<javac destdir="${build.classes.dir}" debug="true" fork="true" encoding="utf-8" includeantruntime="false">
+      <src path="${src.dir}"/>
+    </javac>
+		
+		<jar destfile="${build.dir}/${jarFile}.jar">
+			<fileset dir="${build.dir}/classes"/>
+			<fileset dir="${basedir}/metadata"/>
+			<manifest>
+				<attribute name="Main-Class" value="de.uniba.dsg.soa.GreetingsEndpoint"/>
+			</manifest>
+		</jar>
+  </target>
+	
+	<target name="run">
+		<java jar="${build.dir}/${jarFile}.jar"
+          fork="true"
+          failonerror="true"
+          maxmemory="128m" />
+	</target>
+
+</project>
