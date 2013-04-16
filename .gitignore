@@ -3,3 +3,4 @@ build/
 *.jar
 *.war
 *.ear
+metro-samples
