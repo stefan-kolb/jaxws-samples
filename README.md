@@ -11,6 +11,10 @@ Demonstrates several JAX-WS deployments on JSR 109-compatible application server
 ----------
 Simple bottom-up JAX-WS example.
 
+*method-overloading*
+-----------
+Demonstrates the wsdl mapping of overloaded java methods.
+
 *wsdl-styles*
 -----------
 Demonstrates the several WSDL styles rpc-encoded, rpc-literal, document-literal and document-literal wrapped.
