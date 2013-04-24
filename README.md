@@ -6,7 +6,11 @@ Sample projects using JAX-WS technologies.
 *deployment-styles*
 -----------------
 Demonstrates several JAX-WS deployments on JSR 109-compatible application servers (e.g. Glassfish), Tomcat and as a standalone application.
-  
+
+*exceptions*
+----------
+Demonstrates the mapping of standard java exceptions and soap-style exceptions with JAX-WS.
+
 *java-first*
 ----------
 Simple bottom-up JAX-WS example.
