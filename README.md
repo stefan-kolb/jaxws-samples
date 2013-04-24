@@ -9,7 +9,7 @@ Demonstrates several JAX-WS deployments on JSR 109-compatible application server
 
 *exceptions*
 ----------
-Demonstrates the mapping of standard java exceptions and soap-style exceptions with JAX-WS.
+Demonstrates the mapping of standard Java exceptions and soap-style exceptions with JAX-WS.
 
 *java-first*
 ----------
