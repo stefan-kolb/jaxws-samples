@@ -15,9 +15,13 @@ Demonstrates the mapping of standard Java exceptions and soap-style exceptions w
 ----------
 Simple bottom-up JAX-WS example.
 
+*type-mapping*
+----------
+Demonstrates type mappings from Java to WSDL/XSD and vice versa.
+
 *method-overloading*
 -----------
-Demonstrates the wsdl mapping of overloaded java methods.
+Demonstrates the WSDL mapping of overloaded Java methods.
 
 *wsdl-styles*
 -----------
