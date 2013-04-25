@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.Action;
-import javax.xml.ws.Holder;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -59,14 +58,47 @@ public interface Xml2Java {
 
     /**
      * 
-     * @param standard
+     * @param listin
+     * @return
+     *     returns java.util.List<java.lang.String>
      */
     @WebMethod
-    @RequestWrapper(localName = "getCollection", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.List")
-    @ResponseWrapper(localName = "getCollectionResponse", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.List")
+    @WebResult(name = "listout", targetNamespace = "")
+    @RequestWrapper(localName = "getCollection", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetCollection")
+    @ResponseWrapper(localName = "getCollectionResponse", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetCollectionResponse")
     @Action(input = "http://uniba.de/dsg/soa/Java2Xml/getCollectionRequest", output = "http://uniba.de/dsg/soa/Java2Xml/getCollectionResponse")
-    public void getCollection(
-        @WebParam(name = "standard", targetNamespace = "", mode = WebParam.Mode.INOUT)
-        Holder<List<Cancellor>> standard);
+    public List<String> getCollection(
+        @WebParam(name = "listin", targetNamespace = "")
+        List<String> listin);
+
+    /**
+     * 
+     * @param enumin
+     * @return
+     *     returns de.uniba.dsg.soa.Rating
+     */
+    @WebMethod
+    @WebResult(name = "enumout", targetNamespace = "")
+    @RequestWrapper(localName = "getEnumeration", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetEnumeration")
+    @ResponseWrapper(localName = "getEnumerationResponse", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetEnumerationResponse")
+    @Action(input = "http://uniba.de/dsg/soa/Java2Xml/getEnumerationRequest", output = "http://uniba.de/dsg/soa/Java2Xml/getEnumerationResponse")
+    public Rating getEnumeration(
+        @WebParam(name = "enumin", targetNamespace = "")
+        Rating enumin);
+
+    /**
+     * 
+     * @param entry
+     * @return
+     *     returns java.util.List<de.uniba.dsg.soa.GetMapResponse.Entry>
+     */
+    @WebMethod
+    @WebResult(name = "entry", targetNamespace = "")
+    @RequestWrapper(localName = "getMap", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetMap")
+    @ResponseWrapper(localName = "getMapResponse", targetNamespace = "http://uniba.de/dsg/soa/", className = "de.uniba.dsg.soa.GetMapResponse")
+    @Action(input = "http://uniba.de/dsg/soa/Java2Xml/getMapRequest", output = "http://uniba.de/dsg/soa/Java2Xml/getMapResponse")
+    public List<de.uniba.dsg.soa.GetMapResponse.Entry> getMap(
+        @WebParam(name = "entry", targetNamespace = "")
+        List<de.uniba.dsg.soa.GetMap.Entry> entry);
 
 }

@@ -25,6 +25,9 @@
 	<target name="clean">
     <delete dir="${build.classes.dir}"/>
     <delete dir="${build.dir}"/>
+		<delete>
+			<fileset dir="${src.dir}"/>
+		</delete>
   </target>
 	
 	<target name="wsimport">

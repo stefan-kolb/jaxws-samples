@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="standard" type="{http://uniba.de/dsg/soa/}rating" minOccurs="0"/>
+ *         &lt;element name="enumout" type="{http://uniba.de/dsg/soa/}rating" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getEnumerationResponse", propOrder = {
-    "standard"
+    "enumout"
 })
 public class GetEnumerationResponse {
 
-    protected Rating standard;
+    protected Rating enumout;
 
     /**
-     * Ruft den Wert der standard-Eigenschaft ab.
+     * Ruft den Wert der enumout-Eigenschaft ab.
      * 
      * @return
      *     possible object is
      *     {@link Rating }
      *     
      */
-    public Rating getStandard() {
-        return standard;
+    public Rating getEnumout() {
+        return enumout;
     }
 
     /**
-     * Legt den Wert der standard-Eigenschaft fest.
+     * Legt den Wert der enumout-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
      *     {@link Rating }
      *     
      */
-    public void setStandard(Rating value) {
-        this.standard = value;
+    public void setEnumout(Rating value) {
+        this.enumout = value;
     }
 
 }

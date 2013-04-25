@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für getCollectionResponse complex type.
+ * <p>Java-Klasse für getCollection complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="getCollectionResponse">
+ * &lt;complexType name="getCollection">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="standard" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="listin" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,26 +28,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getCollectionResponse", propOrder = {
-    "standard"
+@XmlType(name = "getCollection", propOrder = {
+    "listin"
 })
-public class GetCollectionResponse {
+public class GetCollection {
 
-    protected List<String> standard;
+    protected List<String> listin;
 
     /**
-     * Gets the value of the standard property.
+     * Gets the value of the listin property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the standard property.
+     * This is why there is not a <CODE>set</CODE> method for the listin property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStandard().add(newItem);
+     *    getListin().add(newItem);
      * </pre>
      * 
      * 
@@ -57,11 +57,11 @@ public class GetCollectionResponse {
      * 
      * 
      */
-    public List<String> getStandard() {
-        if (standard == null) {
-            standard = new ArrayList<String>();
+    public List<String> getListin() {
+        if (listin == null) {
+            listin = new ArrayList<String>();
         }
-        return this.standard;
+        return this.listin;
     }
 
 }

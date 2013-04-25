@@ -28,7 +28,9 @@ public class ObjectFactory {
 
     private final static QName _GetCollectionResponse_QNAME = new QName("http://uniba.de/dsg/soa/", "getCollectionResponse");
     private final static QName _GetDurationResponse_QNAME = new QName("http://uniba.de/dsg/soa/", "getDurationResponse");
+    private final static QName _GetEnumerationResponse_QNAME = new QName("http://uniba.de/dsg/soa/", "getEnumerationResponse");
     private final static QName _GetDateTimeResponse_QNAME = new QName("http://uniba.de/dsg/soa/", "getDateTimeResponse");
+    private final static QName _GetEnumeration_QNAME = new QName("http://uniba.de/dsg/soa/", "getEnumeration");
     private final static QName _GetCollection_QNAME = new QName("http://uniba.de/dsg/soa/", "getCollection");
     private final static QName _GetDateTime_QNAME = new QName("http://uniba.de/dsg/soa/", "getDateTime");
     private final static QName _GetDuration_QNAME = new QName("http://uniba.de/dsg/soa/", "getDuration");
@@ -41,22 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMap }
-     * 
-     */
-    public GetMap createGetMap() {
-        return new GetMap();
-    }
-
-    /**
-     * Create an instance of {@link GetMap.Standard }
-     * 
-     */
-    public GetMap.Standard createGetMapStandard() {
-        return new GetMap.Standard();
-    }
-
-    /**
      * Create an instance of {@link GetMapResponse }
      * 
      */
@@ -65,19 +51,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMapResponse.Standard }
+     * Create an instance of {@link GetMap }
      * 
      */
-    public GetMapResponse.Standard createGetMapResponseStandard() {
-        return new GetMapResponse.Standard();
+    public GetMap createGetMap() {
+        return new GetMap();
     }
 
     /**
-     * Create an instance of {@link List }
+     * Create an instance of {@link GetMapResponse.Entry }
      * 
      */
-    public List createList() {
-        return new List();
+    public GetMapResponse.Entry createGetMapResponseEntry() {
+        return new GetMapResponse.Entry();
+    }
+
+    /**
+     * Create an instance of {@link GetCollectionResponse }
+     * 
+     */
+    public GetCollectionResponse createGetCollectionResponse() {
+        return new GetCollectionResponse();
     }
 
     /**
@@ -89,14 +83,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Cancellor }
-     * 
-     */
-    public Cancellor createCancellor() {
-        return new Cancellor();
-    }
-
-    /**
      * Create an instance of {@link GetEnumeration }
      * 
      */
@@ -105,28 +91,28 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMap.Standard.Entry }
+     * Create an instance of {@link GetMap.Entry }
      * 
      */
-    public GetMap.Standard.Entry createGetMapStandardEntry() {
-        return new GetMap.Standard.Entry();
+    public GetMap.Entry createGetMapEntry() {
+        return new GetMap.Entry();
     }
 
     /**
-     * Create an instance of {@link GetMapResponse.Standard.Entry }
+     * Create an instance of {@link GetCollection }
      * 
      */
-    public GetMapResponse.Standard.Entry createGetMapResponseStandardEntry() {
-        return new GetMapResponse.Standard.Entry();
+    public GetCollection createGetCollection() {
+        return new GetCollection();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCollectionResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://uniba.de/dsg/soa/", name = "getCollectionResponse")
-    public JAXBElement<List> createGetCollectionResponse(List value) {
-        return new JAXBElement<List>(_GetCollectionResponse_QNAME, List.class, null, value);
+    public JAXBElement<GetCollectionResponse> createGetCollectionResponse(GetCollectionResponse value) {
+        return new JAXBElement<GetCollectionResponse>(_GetCollectionResponse_QNAME, GetCollectionResponse.class, null, value);
     }
 
     /**
@@ -139,6 +125,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEnumerationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://uniba.de/dsg/soa/", name = "getEnumerationResponse")
+    public JAXBElement<GetEnumerationResponse> createGetEnumerationResponse(GetEnumerationResponse value) {
+        return new JAXBElement<GetEnumerationResponse>(_GetEnumerationResponse_QNAME, GetEnumerationResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}}
      * 
      */
@@ -148,12 +143,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link List }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetEnumeration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://uniba.de/dsg/soa/", name = "getEnumeration")
+    public JAXBElement<GetEnumeration> createGetEnumeration(GetEnumeration value) {
+        return new JAXBElement<GetEnumeration>(_GetEnumeration_QNAME, GetEnumeration.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCollection }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://uniba.de/dsg/soa/", name = "getCollection")
-    public JAXBElement<List> createGetCollection(List value) {
-        return new JAXBElement<List>(_GetCollection_QNAME, List.class, null, value);
+    public JAXBElement<GetCollection> createGetCollection(GetCollection value) {
+        return new JAXBElement<GetCollection>(_GetCollection_QNAME, GetCollection.class, null, value);
     }
 
     /**
