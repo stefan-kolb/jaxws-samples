@@ -1,0 +1,53 @@
+﻿<project name="xml2java" default="compile" basedir=".">
+	<!-- Environment -->
+  <property file="../../sample.properties"/>
+		
+  <property name="build.dir" location ="${basedir}/build"/>
+  <property name="build.classes.dir" location ="${build.dir}/classes"/>
+  <property name="src.dir" location ="${basedir}/src"/>
+	
+	<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+		<classpath>
+			<fileset dir="${javaee.home}/modules">
+				<include name="**/*.jar" />
+			</fileset>
+		</classpath>
+	</taskdef>
+
+	<!-- Build -->
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+	</target>
+		
+	<target name="clean">
+    <delete dir="${build.classes.dir}"/>
+    <delete dir="${build.dir}"/>
+  </target>
+	
+	<target name="wsimport">
+		<wsimport
+			debug="true"
+			keep="true"
+			package="de.uniba.dsg.soa"
+			sourcedestdir="${src.dir}"
+			xnocompile="true"
+			wsdl="${basedir}/metadata/Xml2Java.wsdl">
+			<depends file="${basedir}/metadata"/>
+			<produces dir="${src.dir}"/>
+		</wsimport>
+	</target>
+	
+  <target name="compile" depends="clean, init, wsimport">
+		<javac destdir="${build.classes.dir}" debug="true" fork="true" encoding="iso-8859-1" includeantruntime="false">
+      <src path="${src.dir}"/>
+    </javac>
+		
+		<jar destfile="${build.dir}/${jarFile}.jar" basedir="${build.dir}/classes">
+      <manifest>
+        <attribute name="Main-Class" value="de.uniba.dsg.soa.DemoWSClient"/>
+			</manifest>
+    </jar>
+  </target>
+	
+</project>

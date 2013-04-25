@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://uniba.de/dsg/soa/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://uniba.de/dsg/soa/">
+
+	<xs:element name="getDuration" type="xs:duration"/>
+	<xs:element name="getDurationResponse" type="xs:duration"/>
+	
+	<xs:element name="getDateTime" type="xs:dateTime"/>
+	<xs:element name="getDateTimeResponse" type="xs:dateTime"/>
+
+	<xs:element name="getCollection" type="tns:list"/>
+	
+	<xs:element name="getCollectionResponse" type="tns:list"/>
+
+	<xs:complexType name="list">
+		<xs:sequence>
+			<xs:element name="standard" type="tns:cancellor" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="cancellor">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="party" type="xs:string" minOccurs="0"/>
+			<xs:element name="from" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="to" type="xs:dateTime" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+<xs:complexType name="getMap">
+<xs:sequence>
+<xs:element name="standard">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="xs:string"/>
+<xs:element name="value" minOccurs="0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getMapResponse">
+<xs:sequence>
+<xs:element name="standard">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="xs:string"/>
+<xs:element name="value" minOccurs="0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEnumeration">
+<xs:sequence>
+<xs:element name="standard" type="tns:rating" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEnumerationResponse">
+<xs:sequence>
+<xs:element name="standard" type="tns:rating" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="rating">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Bad"/>
+<xs:enumeration value="Ok"/>
+<xs:enumeration value="Good"/>
+<xs:enumeration value="Super"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>
