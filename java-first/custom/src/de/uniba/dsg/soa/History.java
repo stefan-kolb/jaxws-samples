@@ -13,6 +13,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 
+import javax.xml.bind.annotation.XmlElement;
+
 @WebService(targetNamespace="http://uniba.de/dsg/soa/")
 public class History {
 	private List<Cancellor> cancellors;
@@ -32,7 +34,7 @@ public class History {
 	
 	@WebMethod
 	@WebResult(name="cancellor")
-	public List<Cancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException {
+	public List<Cancellor> getCancellors(@WebParam(name="from") @XmlElement(required=true) Date from, @WebParam(name="to") @XmlElement(required=true) Date to) throws IllegalArgumentException {
 		if(from == null || to == null) {
 			throw new IllegalArgumentException("Dates should not be null!");
 		}
