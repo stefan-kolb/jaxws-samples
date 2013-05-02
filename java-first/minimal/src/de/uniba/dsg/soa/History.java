@@ -45,4 +45,9 @@ public class History {
 		}
 		return active;
 	}
+	
+	@WebMethod(exclude=true)
+	public List<Cancellor> getAll() {
+		return cancellors;
+	}
 }
