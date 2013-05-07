@@ -26,7 +26,7 @@
     <delete dir="${build.classes.dir}"/>
     <delete dir="${build.dir}"/>
 		<delete>
-			<fileset dir="${src.dir}"/>
+			<fileset dir="${src.dir}" excludes="**/DemoWSClient.java"/>
 		</delete>
   </target>
 	

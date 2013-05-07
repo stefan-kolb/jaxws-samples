@@ -18,17 +18,17 @@ public class DemoWSClient {
 		GregorianCalendar end = new GregorianCalendar(2013, 1, 1);
 		XMLGregorianCalendar from = DatatypeFactory.newInstance().newXMLGregorianCalendar(start);
 		XMLGregorianCalendar to = DatatypeFactory.newInstance().newXMLGregorianCalendar(end);
-		
+
 		History historyService = new HistoryService().getHistoryPort();
 		List<Cancellor> cancellors = historyService.getCancellors(from , to);
-		
+
 		for(Cancellor c : cancellors) {
 			System.out.println("Name: " + c.getName());
 			System.out.println("Party: " + c.getParty());
 			System.out.println("Tenure: " + c.getFrom().getMonth() + "/" + c.getFrom().getYear() + "-" + c.getTo().getMonth() + "/" + c.getTo().getYear());
 			System.out.println();
 		}
-		
+
 		System.in.read();
 		System.exit(0);
 	}
