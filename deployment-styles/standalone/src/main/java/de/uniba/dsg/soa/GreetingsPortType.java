@@ -1,4 +1,3 @@
-
 package de.uniba.dsg.soa;
 
 import javax.jws.WebMethod;

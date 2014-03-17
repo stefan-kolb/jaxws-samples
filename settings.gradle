@@ -1,0 +1,3 @@
+include 'deployment-styles:standalone'
+include 'java-first:minimal'
+include 'java-first:custom'
