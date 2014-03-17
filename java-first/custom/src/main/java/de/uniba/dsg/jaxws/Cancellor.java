@@ -1,4 +1,4 @@
-package de.uniba.dsg.soa;
+package de.uniba.dsg.jaxws;
 
 import java.util.Date;
 
