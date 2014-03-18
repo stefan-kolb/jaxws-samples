@@ -11,10 +11,10 @@ import javax.xml.namespace.QName;
 
 @WebService
 public class Fault {
-	@WebMethod
-	public String verify(@WebParam(name="input") String input) throws SOAPFaultException, SOAPException {
-	  SOAPFactory factory = SOAPFactory.newInstance();
-    SOAPFault fault = factory.createFault("New Error", new QName("http://uniba.de/dsg/soa/", "CustomFault"));
-    throw new SOAPFaultException(fault);
-	}
+    @WebMethod
+    public String verify(@WebParam(name = "input") String input) throws SOAPFaultException, SOAPException {
+        SOAPFactory factory = SOAPFactory.newInstance();
+        SOAPFault fault = factory.createFault("New Error", new QName("http://uniba.de/dsg/soa/", "CustomFault"));
+        throw new SOAPFaultException(fault);
+    }
 }

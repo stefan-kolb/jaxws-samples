@@ -2,6 +2,10 @@ include 'deployment-styles:jsr109'
 include 'deployment-styles:standalone'
 include 'deployment-styles:tomcat'
 
+include 'exceptions:custom-fault'
+include 'exceptions:java-exception'
+include 'exceptions:soap-fault'
+
 include 'java-first:minimal'
 include 'java-first:custom'
 
