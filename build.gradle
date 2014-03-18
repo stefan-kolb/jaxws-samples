@@ -1,13 +1,16 @@
-allprojects {
-
+buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
 
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-        }
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-cargo-plugin:1.4'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
     }
 }
 
@@ -18,5 +21,33 @@ subprojects {
 
     jar {
         manifest.attributes provider: 'gradle'
+    }
+}
+
+def webProjects() {
+    subprojects.findAll { subproject -> subproject.plugins.hasPlugin('war') }
+}
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+
+    configure(webProjects()) {
+        apply plugin: 'cargo'
+
+        cargo {
+            containerId = 'glassfish4x'
+
+            local {
+                installer {
+                    installUrl = 'http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip'
+                    downloadDir = file("$buildDir/download")
+                    extractDir = file("$buildDir/extract")
+                }
+            }
+        }
+
+        cargoRunLocal.dependsOn assemble
     }
 }
