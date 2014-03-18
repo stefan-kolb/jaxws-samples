@@ -13,6 +13,9 @@ include 'java-first:custom'
 
 include 'method-overloading'
 
+include 'type-mapping:java2wsdl'
+include 'type-mapping:wsdl2java'
+
 include 'wsdl-styles:document-literal'
 include 'wsdl-styles:document-literal-wrapped'
 include 'wsdl-styles:rpc-literal'

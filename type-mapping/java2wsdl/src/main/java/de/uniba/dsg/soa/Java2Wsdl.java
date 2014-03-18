@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.Collection;
 
 @WebService(targetNamespace="http://uniba.de/dsg/soa/")
-public class Java2Xml {
+public class Java2Wsdl {
 	@WebMethod
 	@WebResult(name="primitive")
 	public byte getByte(@WebParam(name="primitive") byte b) {
