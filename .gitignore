@@ -17,3 +17,4 @@ metro-samples
 .idea
 .gradle
 *.iml
+generated/

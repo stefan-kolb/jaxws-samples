@@ -1,0 +1,29 @@
+configurations {
+    jaxws
+}
+
+dependencies {
+    jaxws 'com.sun.xml.ws:jaxws-tools:2.2.8'
+}
+
+destDir = file("${projectDir}/src/main/generated")
+
+task wsimport {
+    doLast {
+        ant {
+            destDir.mkdirs()
+
+            taskdef(name:'wsimport',
+                    classname:'com.sun.tools.ws.ant.WsImport',
+                    classpath:configurations.jaxws.asPath)
+            wsimport(keep:true,
+                    xnocompile: true,
+                    sourcedestdir: destDir,
+                    package: 'de.uniba.dsg.soa',
+                    wsdl: 'src/main/resources/faultservice.wsdl')
+        }
+    }
+}
+clean.delete destDir
+compileJava.source = "${projectDir}/src/main/generated"
+compileJava.dependsOn wsimport

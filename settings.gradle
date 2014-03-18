@@ -3,7 +3,9 @@ include 'deployment-styles:standalone'
 include 'deployment-styles:tomcat'
 
 include 'exceptions:custom-fault'
+include 'exceptions:custom-fault-client'
 include 'exceptions:java-exception'
+include 'exceptions:java-exception-client'
 include 'exceptions:soap-fault'
 
 include 'java-first:minimal'

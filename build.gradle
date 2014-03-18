@@ -9,13 +9,11 @@ buildscript {
 }
 
 allprojects {
+    apply plugin: 'java'
+
     repositories {
         mavenCentral()
     }
-}
-
-subprojects {
-    apply plugin: 'java'
 }
 
 def webProjects() {
@@ -23,10 +21,6 @@ def webProjects() {
 }
 
 gradle.projectsEvaluated {
-    tasks.withType(JavaCompile) {
-        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-    }
-
     configure(webProjects()) {
         apply plugin: 'cargo'
 
