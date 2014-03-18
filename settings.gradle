@@ -4,3 +4,9 @@ include 'deployment-styles:tomcat'
 
 include 'java-first:minimal'
 include 'java-first:custom'
+
+include 'method-overloading'
+
+include 'wsdl-styles:document-literal'
+include 'wsdl-styles:document-literal-wrapped'
+include 'wsdl-styles:rpc-literal'
