@@ -3,6 +3,8 @@ JAX-WS Samples
 
 Sample projects using JAX-WS technologies.
 
+To deploy the samples to Glassfish just run `gradle cargoRunLocal`
+
 ### *deployment-styles*
 Demonstrates several JAX-WS deployments on JSR 109-compatible application servers (e.g. Glassfish), Tomcat and as a standalone application.
 
