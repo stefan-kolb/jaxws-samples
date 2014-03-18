@@ -1,3 +1,6 @@
+include 'deployment-styles:jsr109'
 include 'deployment-styles:standalone'
+include 'deployment-styles:tomcat'
+
 include 'java-first:minimal'
 include 'java-first:custom'
