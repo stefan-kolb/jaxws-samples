@@ -12,7 +12,7 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
-@WebService
+@WebService(targetNamespace = "http://uniba.de/dsg/jaxws/")
 public class History {
 	private List<Cancellor> cancellors;
 	

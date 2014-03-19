@@ -1,7 +1,7 @@
-<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://uniba.de/dsg/soa/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://uniba.de/dsg/soa/" name="HistoryService">
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://uniba.de/dsg/jaxws/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://uniba.de/dsg/jaxws/" name="HistoryService">
 	<types>
 		<xsd:schema>
-			<xsd:import namespace="http://uniba.de/dsg/soa/" schemaLocation="historyservice.xsd"/>
+			<xsd:import namespace="http://uniba.de/dsg/jaxws/" schemaLocation="historyservice.xsd"/>
 		</xsd:schema>
 	</types>
 	<message name="getCancellors">
@@ -12,8 +12,8 @@
 	</message>
 	<portType name="History">
 		<operation name="getCancellors">
-			<input wsam:Action="http://uniba.de/dsg/soa/History/getCancellorsRequest" message="tns:getCancellors"/>
-			<output wsam:Action="http://uniba.de/dsg/soa/History/getCancellorsResponse" message="tns:getCancellorsResponse"/>
+			<input wsam:Action="http://uniba.de/dsg/jaxws/History/getCancellorsRequest" message="tns:getCancellors"/>
+			<output wsam:Action="http://uniba.de/dsg/jaxws/History/getCancellorsResponse" message="tns:getCancellorsResponse"/>
 		</operation>
 	</portType>
 	<binding name="HistoryPortBinding" type="tns:History">

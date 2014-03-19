@@ -1,4 +1,4 @@
-package de.uniba.dsg.soa;
+package de.uniba.dsg.jaxws;
 
 import de.uniba.dsg.soa.HistoryService;
 import de.uniba.dsg.soa.History;

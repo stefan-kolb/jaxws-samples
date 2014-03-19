@@ -24,4 +24,4 @@ Demonstrates the WSDL mapping of overloaded Java methods.
 Demonstrates the several WSDL styles rpc-encoded, rpc-literal, document-literal and document-literal wrapped.
 
 ### *wsimport-client*
-Demonstrates the usage of the *wsimport* tool using the default wrapper style and with disabled wrapper style (plain).
+Demonstrates the usage of the *wsimport* tool using the default wrapper style and with disabled wrapper style (plain). First run *java-first:custom* project in order to be able to access the service with the wsimport client.

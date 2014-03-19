@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "Cancellor")
-@XmlType(propOrder = { "name", "party", "from", "to" }, namespace="http://uniba.de/dsg/soa/")
+@XmlType(propOrder = { "name", "party", "from", "to" }, namespace="http://uniba.de/dsg/jaxws/")
 public class Cancellor {
 	private String name;
 	private String party;

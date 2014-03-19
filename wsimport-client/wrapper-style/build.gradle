@@ -1,6 +1,6 @@
 apply plugin:'application'
 
-mainClassName = "de.uniba.dsg.soa.DemoWSClient"
+mainClassName = "de.uniba.dsg.jaxws.DemoWSClient"
 
 run {
     standardInput = System.in
