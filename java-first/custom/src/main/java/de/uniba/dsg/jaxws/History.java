@@ -8,6 +8,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
+import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -25,11 +26,12 @@ public class History {
 		cancellors.add(new Cancellor("Willy Brandt", "SPD", new LocalDate(1969, 10, 21).toDate(), new LocalDate(1974, 5, 7).toDate()));
 		cancellors.add(new Cancellor("Helmut Schmidt", "SPD", new LocalDate(1974, 5, 16).toDate(), new LocalDate(1982, 10, 1).toDate()));
 		cancellors.add(new Cancellor("Helmut Kohl", "CDU", new LocalDate(1982, 10, 1).toDate(), new LocalDate(1998, 10, 27).toDate()));
-		cancellors.add(new Cancellor("Gerhard Schröder", "SPD", new LocalDate(1998, 10, 27).toDate(), new LocalDate(2005, 11, 22).toDate()));
+		cancellors.add(new Cancellor("Gerhard Schroeder", "SPD", new LocalDate(1998, 10, 27).toDate(), new LocalDate(2005, 11, 22).toDate()));
 		cancellors.add(new Cancellor("Angela Merkel", "CDU", new LocalDate(2005, 11, 22).toDate(), new LocalDate().toDate()));
 	}
 	
 	@WebMethod
+    @WebResult(name="cancellor")
 	public List<Cancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException {
 		if(from == null || to == null) {
 			throw new IllegalArgumentException("Dates should not be null!");

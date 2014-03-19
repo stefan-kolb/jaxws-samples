@@ -1,26 +1,32 @@
-<xs:schema xmlns:tns="http://uniba.de/dsg/jaxws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://uniba.de/dsg/jaxws/">
-	<xs:element name="Cancellor" type="tns:cancellor"/>
-	<xs:element name="getCancellors" type="tns:getCancellors"/>
-	<xs:element name="getCancellorsResponse" type="tns:getCancellorsResponse"/>
-	
-	<xs:complexType name="getCancellors">
-		<xs:sequence>
-			<xs:element name="from" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="to" type="xs:dateTime" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="getCancellorsResponse">
-		<xs:sequence>
-			<xs:element name="cancellor" type="tns:cancellor" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="cancellor">
-		<xs:sequence>
-			<xs:element name="name" type="xs:string" minOccurs="0"/>
-			<xs:element name="party" type="xs:string" minOccurs="0"/>
-			<xs:element name="from" type="xs:dateTime" minOccurs="0"/>
-			<xs:element name="to" type="xs:dateTime" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. -->
+<xs:schema xmlns:tns="http://uniba.de/dsg/jaxws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+           targetNamespace="http://uniba.de/dsg/jaxws/">
+
+    <xs:element name="Cancellor" type="tns:cancellor"/>
+
+    <xs:element name="getCancellors" type="tns:getCancellors"/>
+
+    <xs:element name="getCancellorsResponse" type="tns:getCancellorsResponse"/>
+
+    <xs:complexType name="getCancellors">
+        <xs:sequence>
+            <xs:element name="from" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="to" type="xs:dateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="getCancellorsResponse">
+        <xs:sequence>
+            <xs:element name="cancellor" type="tns:cancellor" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="cancellor">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="party" type="xs:string" minOccurs="0"/>
+            <xs:element name="from" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="to" type="xs:dateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

@@ -27,7 +27,7 @@ task wsimport {
             wsimport(keep:true,
                     xnocompile: true,
                     sourcedestdir: destDir,
-                    package: 'de.uniba.dsg.soa',
+                    package: 'de.uniba.dsg.jaxws',
                     wsdl: 'src/main/resources/historyservice.wsdl')
         }
     }

@@ -27,9 +27,9 @@ task wsimport {
             wsimport(keep:true,
                     xnocompile: true,
                     sourcedestdir: destDir,
-                    package: 'de.uniba.dsg.soa',
-                    wsdl: 'src/main/resources/historyservice.wsdl')
-            // <binding dir="${basedir}/metadata" includes="import-binding.xml"/>
+                    package: 'de.uniba.dsg.jaxws',
+                    wsdl: 'src/main/resources/historyservice.wsdl',
+                    binding: 'src/main/resources/import-binding.xml')
         }
     }
 }
