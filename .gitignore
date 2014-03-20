@@ -17,4 +17,6 @@ metro-samples
 .idea
 .gradle
 *.iml
+*.ipr
+*.iws
 generated/
