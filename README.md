@@ -48,10 +48,38 @@ The mapped WSDL should be available at `http://localhost:8080/java2wsdl/Java2Wsd
 The Java artifacts can be generated via `gradle wsimport`.
 
 ## Method-overloading
-Demonstrates the custom WSDL mapping of overloaded Java methods.
+Demonstrates the mapping of overloaded Java methods via custom mappings.
+The Web service should be available at `http://localhost:8080/method-overloading/VolumeService`.
 
 ## Exceptions
-Demonstrates the mapping of standard Java exceptions and soap-style exceptions with JAX-WS.
+Demonstrates the mapping of standard Java exceptions and soap-style exceptions with JAX-WS. Each Exception type has a corresponding client project to demonstrate the WSDL mapping to Java stubs.
+
+### Java Exception & Java Exception client
+Demonstrates the problem of mapping a standard-like Java Exception to SOAP faults.
+If the Exception does not follow this style, JAX-WS will generate a wrapper class and the Exception will be put in the FaultBean class.
+The Web service should be available at `http://localhost:8080/java-exception/FaultService`.
+The Java artifacts can be generated via `gradle wsimport`.
+
+### Custom fault & Custom fault client
+Demonstrates a custom Java Exception implementation that maps the SOAP fault structure.
+The Web service should be available at `http://localhost:8080/custom-fault/FaultService`.
+The Java artifacts can be generated via `gradle wsimport`.
+
+### SOAP fault
+Uses the `SOAPFaultException` implementation. More information about SOAP faults can be found [here](http://docs.oracle.com/cd/E19159-01/819-3669/bnbin/index.html).
 
 ## Wsdl-styles
 Demonstrates the several WSDL styles rpc-encoded, rpc-literal, document-literal and document-literal wrapped.
+See [this blog](http://www.ibm.com/developerworks/library/ws-whichwsdl/) for a detailed explanation.
+
+### Document-literal
+The Web service should be available at `http://localhost:8080/document-literal/GreetingsService`.
+
+### Document-literal-wrapped
+The Web service should be available at `http://localhost:8080/document-literal-wrapped/GreetingsService`.
+
+### Rpc-encoded
+No longer supported by JAX-WS 2.
+
+### Rpc-literal
+The Web service should be available at `http://localhost:8080/rpc-literal/GreetingsService`.

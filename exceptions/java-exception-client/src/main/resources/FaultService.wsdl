@@ -44,7 +44,7 @@
     </binding>
     <service name="FaultService">
         <port name="FaultPort" binding="tns:FaultPortBinding">
-            <soap:address location="http://mr-10-2012-04-n:8080/jaxws-exception/FaultService"/>
+            <soap:address location="http://localhost:8080/jaxws-exception/FaultService"/>
         </port>
     </service>
 </definitions>

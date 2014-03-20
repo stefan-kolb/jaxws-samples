@@ -42,7 +42,7 @@
  
 	<service name="GreetingsService">
 		<port binding="tns:GreetingsBinding" name="GreetingsPort">
-      <soap:address location="http://localhost:8080/greetings-document-literal/GreetingsService"/>
+      <soap:address location="http://localhost:8080/document-literal/GreetingsService"/>
     </port>
   </service>
 </definitions>
