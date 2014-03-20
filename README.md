@@ -33,17 +33,22 @@ Build with `war` and manually deploy to a Tomcat instance.
 The standalone project uses `javax.xml.ws.Endpoint` to run a server instance. It is the simplest way to expose an experimental JAX-WS Web service. The Web service should be available at `http://localhost:8080/standalone/GreetingsService`.
 
 ## Wsimport-client
-Demonstrates the usage of the *wsimport* tool to generate Web Services interfaces and clients using a top-down approach. First run the [*java-first:custom*](#Java-first) project in order to be able to access the service with the wsimport client.
+Demonstrates the usage of the *wsimport* tool to generate Web Services interfaces and clients using a top-down approach. First run the [*java-first:custom*](#java-first) project in order to be able to access the service with the wsimport client. Use `gradle run` to run the web services test client.
 
-### Plain-style
-
-### Wrapper-style
+### Wrapper-style vs. Plain-style
+See [this blog](http://myarch.com/wrappernon-wrapper-web-service-styles-things-you-need-to-know/) for an explanation.
 
 ## Type-mapping
 Demonstrates type mappings from Java to WSDL/XSD and vice versa.
 
+### Java2Wsdl
+The mapped WSDL should be available at `http://localhost:8080/java2wsdl/Java2WsdlService?wsdl`.
+
+### Wsdl2Java
+The Java artifacts can be generated via `gradle wsimport`.
+
 ## Method-overloading
-Demonstrates the WSDL mapping of overloaded Java methods.
+Demonstrates the custom WSDL mapping of overloaded Java methods.
 
 ## Exceptions
 Demonstrates the mapping of standard Java exceptions and soap-style exceptions with JAX-WS.
