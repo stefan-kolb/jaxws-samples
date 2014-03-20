@@ -54,7 +54,7 @@
  
 	<service name="GreetingsService">
 		<port binding="tns:GreetingsBinding" name="GreetingsPort">
-      <soap:address location="http://localhost:8080/greetings-tomcat/GreetingsService"/>
+      <soap:address location="http://localhost:8080/tomcat/GreetingsService"/>
     </port>
   </service>
 </definitions>
