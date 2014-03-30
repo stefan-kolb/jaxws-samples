@@ -27,7 +27,7 @@ The Web service should be available at `http://localhost:8080/jsr109/GreetingsSe
 
 ### Tomcat
 Tomcat needs additional deployment descriptors and the JAX-WS implementation in order to run JAX-WS Web services.
-Build with `war` and manually deploy to a Tomcat instance.
+Build with `gradle war` and manually deploy to a Tomcat instance.
 
 ### Standalone
 The standalone project uses `javax.xml.ws.Endpoint` to run a server instance. It is the simplest way to expose an experimental JAX-WS Web service. The Web service should be available at `http://localhost:8080/standalone/GreetingsService`.
