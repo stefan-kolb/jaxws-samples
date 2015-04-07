@@ -6,7 +6,9 @@ dependencies {
     jaxws 'com.sun.xml.ws:jaxws-tools:2.2.8'
 }
 
-destDir = file("${projectDir}/src/main/generated")
+project.ext {
+    destDir = file("${projectDir}/src/main/generated")
+}
 
 task wsimport {
     doLast {
@@ -20,7 +22,7 @@ task wsimport {
                     xnocompile: true,
                     sourcedestdir: destDir,
                     package: 'de.uniba.dsg.soa',
-                    wsdl: 'src/main/resources/faultservice.wsdl')
+                    wsdl: "${projectDir}/src/main/resources/faultservice.wsdl")
         }
     }
 }

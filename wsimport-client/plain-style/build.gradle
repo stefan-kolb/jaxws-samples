@@ -14,7 +14,9 @@ dependencies {
     jaxws 'com.sun.xml.ws:jaxws-tools:2.2.8'
 }
 
-destDir = file("${projectDir}/src/main/generated")
+project.ext {
+    destDir = file("${projectDir}/src/main/generated")
+}
 
 task wsimport {
     doLast {
@@ -28,8 +30,8 @@ task wsimport {
                     xnocompile: true,
                     sourcedestdir: destDir,
                     package: 'de.uniba.dsg.jaxws',
-                    wsdl: 'src/main/resources/historyservice.wsdl',
-                    binding: 'src/main/resources/import-binding.xml')
+                    wsdl: "${projectDir}/src/main/resources/historyservice.wsdl",
+                    binding: "${projectDir}/src/main/resources/import-binding.xml")
         }
     }
 }
