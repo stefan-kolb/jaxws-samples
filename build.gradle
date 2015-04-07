@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.gradle.api.plugins:gradle-cargo-plugin:1.5.2'
+        classpath 'org.gradle.api.plugins:gradle-cargo-plugin:2.1'
     }
 }
 
@@ -29,7 +29,7 @@ gradle.projectsEvaluated {
 
             local {
                 installer {
-                    installUrl = 'http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip'
+                    installUrl = 'http://download.java.net/glassfish/4.1/release/glassfish-4.1.zip'
                     downloadDir = file("$buildDir/download")
                     extractDir = file("$buildDir/extract")
                 }
