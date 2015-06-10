@@ -14,6 +14,8 @@ task wrapper(type: Wrapper) {
 
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
 
     repositories {
         mavenCentral()
