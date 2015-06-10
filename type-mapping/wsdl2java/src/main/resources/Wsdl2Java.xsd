@@ -71,10 +71,10 @@
 
 	<xs:simpleType name="rating">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Bad"/>
-			<xs:enumeration value="Ok"/>
-			<xs:enumeration value="Good"/>
-			<xs:enumeration value="Super"/>
+			<xs:enumeration value="BAD"/>
+			<xs:enumeration value="OK"/>
+			<xs:enumeration value="GOOD"/>
+			<xs:enumeration value="SUPER"/>
 		</xs:restriction>
 	</xs:simpleType>
 
