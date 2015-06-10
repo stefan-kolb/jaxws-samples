@@ -14,9 +14,18 @@ hs_err_pid*
 # Custom
 build/
 metro-samples
-.idea
 .gradle
+generated/
+
+# IntelliJ files
 *.iml
 *.ipr
 *.iws
-generated/
+.idea/
+out/
+
+# Eclipse files
+.project
+.classpath
+.settings/
+bin/
