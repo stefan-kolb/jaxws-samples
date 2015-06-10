@@ -7,6 +7,9 @@ For the available Gradle tasks see [the documentation](https://github.com/bmusch
 The plugin will download and install the server automatically for each project. The admin interface can be found at `http://admin:adminadmin@localhost:4848`. If not used in conjunction with `gradle cargoRunLocal`, make sure all deployment artifacts were created before starting the server.
 When Gradle is installed on your system all tasks can be run directly from the sub-project's root folder, e.g. `gradle war`. Otherwise you can use the Gradle wrapper from the root and use an absolute path like `gradlew java-first:minimal:war`.
 
+Use `gradlew eclipse` to generate Eclipse project files for all of the modules.
+This also works for IntelliJ IDEA with `gradlew idea`.
+
 ## Java-first
 Simple bottom-up JAX-WS example. The Web service returns German chancellors that reigned in a given period of time.
 
