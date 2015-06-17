@@ -11,13 +11,13 @@ Use `gradlew eclipse` to generate Eclipse project files for all of the modules.
 This also works for IntelliJ IDEA with `gradlew idea`.
 
 ## Contents
-- [Java-first Web Services](#Java-first)
-- [Deployment Styles](#Deployment-styles)
-- [WSDL-first Web Services](#Wsimport-client)
-- [Data Type Mapping](#Type-mapping)
-- [Method Overloading](#Method-overloading)
-- [Exceptions](#Exceptions)
-- [WSDL Styles](#Wsdl-styles)
+- [Java-first Web Services](#java-first)
+- [Deployment Styles](#deployment-styles)
+- [WSDL-first Web Services](#wsimport-client)
+- [Data Type Mapping](#type-mapping)
+- [Method Overloading](#method-overloading)
+- [Exceptions](#exceptions)
+- [WSDL Styles](#wsdl-styles)
 
 ## Java-first
 Simple bottom-up JAX-WS example. The Web service returns German chancellors that reigned in a given period of time.
