@@ -13,7 +13,7 @@ This also works for IntelliJ IDEA with `gradlew idea`.
 ## Contents
 - [Java-first Web Services](#java-first)
 - [Deployment Styles](#deployment-styles)
-- [WSDL-first Web Services](#wsimport-client)
+- [WSDL-first Web Services](#ws-client)
 - [Data Type Mapping](#type-mapping)
 - [Method Overloading](#method-overloading)
 - [Exceptions](#exceptions)
@@ -44,7 +44,7 @@ Build with `gradle war` and manually deploy to a Tomcat instance.
 ### Standalone
 The standalone project uses `javax.xml.ws.Endpoint` to run a server instance. It is the simplest way to expose an experimental JAX-WS Web service. The Web service should be available at `http://localhost:8080/standalone/GreetingsService`.
 
-## Ws-client
+## WS-client
 Demonstrates the usage of the *wsimport* tool to generate Web Services interfaces and clients using a top-down approach. First run the [*java-first:custom*](#java-first) project in order to be able to access the service with the wsimport client. Use `gradle run` to run the web services test client.
 
 ### Dynamic WS Client
