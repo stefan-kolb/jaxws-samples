@@ -22,7 +22,7 @@ public class History {
 		
 		cancellors.add(new Cancellor("Konrad Adenauer", "CDU", new LocalDate(1949, 9, 15).toDate(), new LocalDate(1963, 10, 16).toDate()));
 		cancellors.add(new Cancellor("Ludwig Erhard", "CDU", new LocalDate(1963, 10, 16).toDate(), new LocalDate(1966, 12, 1).toDate()));
-		cancellors.add(new Cancellor("Kurt Geord Kiesinger", "CDU", new LocalDate(1966, 12, 1).toDate(), new LocalDate(1969, 10, 21).toDate()));
+		cancellors.add(new Cancellor("Kurt Georg Kiesinger", "CDU", new LocalDate(1966, 12, 1).toDate(), new LocalDate(1969, 10, 21).toDate()));
 		cancellors.add(new Cancellor("Willy Brandt", "SPD", new LocalDate(1969, 10, 21).toDate(), new LocalDate(1974, 5, 7).toDate()));
 		cancellors.add(new Cancellor("Helmut Schmidt", "SPD", new LocalDate(1974, 5, 16).toDate(), new LocalDate(1982, 10, 1).toDate()));
 		cancellors.add(new Cancellor("Helmut Kohl", "CDU", new LocalDate(1982, 10, 1).toDate(), new LocalDate(1998, 10, 27).toDate()));

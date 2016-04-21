@@ -20,5 +20,6 @@ include 'wsdl-styles:document-literal'
 include 'wsdl-styles:document-literal-wrapped'
 include 'wsdl-styles:rpc-literal'
 
-include 'wsimport-client:plain-style'
-include 'wsimport-client:wrapper-style'
+include 'ws-client:plain-style'
+include 'ws-client:wrapper-style'
+include 'ws-client:dynamic-style'
