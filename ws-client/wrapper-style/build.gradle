@@ -11,7 +11,7 @@ configurations {
 }
 
 dependencies {
-    jaxws 'com.sun.xml.ws:jaxws-tools:2.2.8'
+    jaxws 'com.sun.xml.ws:jaxws-tools:2.2.10'
 }
 
 project.ext {
@@ -19,6 +19,8 @@ project.ext {
 }
 
 task wsimport {
+    System.setProperty('javax.xml.accessExternalSchema', 'all')
+
     doLast {
         ant {
             destDir.mkdirs()
