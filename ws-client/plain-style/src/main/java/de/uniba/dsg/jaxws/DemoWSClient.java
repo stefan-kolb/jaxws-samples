@@ -2,9 +2,9 @@ package de.uniba.dsg.jaxws;
 
 import de.uniba.dsg.jaxws.HistoryService;
 import de.uniba.dsg.jaxws.History;
-import de.uniba.dsg.jaxws.Cancellor;
-import de.uniba.dsg.jaxws.GetCancellorsResponse;
-import de.uniba.dsg.jaxws.GetCancellors;
+import de.uniba.dsg.jaxws.Chancellor;
+import de.uniba.dsg.jaxws.GetChancellorsResponse;
+import de.uniba.dsg.jaxws.GetChancellors;
 import de.uniba.dsg.jaxws.ObjectFactory;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -22,19 +22,19 @@ public class DemoWSClient {
 		XMLGregorianCalendar from = DatatypeFactory.newInstance().newXMLGregorianCalendar(start);
 		XMLGregorianCalendar to = DatatypeFactory.newInstance().newXMLGregorianCalendar(end);
 		// Input message
-		GetCancellors in = new ObjectFactory().createGetCancellors();
+		GetChancellors in = new ObjectFactory().createGetCancellors();
 		in.setFrom(from);
 		in.setTo(to);
 		// Output message
 		History historyService = new HistoryService().getHistoryPort();
-		GetCancellorsResponse out = historyService.getCancellors(in);
-		List<Cancellor> cancellors = out.getCancellor();
+		GetCancellorsResponse out = historyService.getChancellors(in);
+		List<Chancellor> chancellors = out.getCancellor();
 
         System.out.println("Accessing Web service...");
-        System.out.println("Getting cancellors from " + from.getYear() + " to " + to.getYear());
+        System.out.println("Getting chancellors from " + from.getYear() + " to " + to.getYear());
         System.out.println();
 
-		for(Cancellor c : cancellors) {
+		for(Chancellor c : chancellors) {
 			System.out.println("Name: " + c.getName());
 			System.out.println("Party: " + c.getParty());
 			System.out.println("Tenure: " + c.getFrom().getMonth() + "/" + c.getFrom().getYear() + "-" + c.getTo().getMonth() + "/" + c.getTo().getYear());

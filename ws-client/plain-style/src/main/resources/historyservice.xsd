@@ -2,26 +2,26 @@
 <xs:schema xmlns:tns="http://uniba.de/dsg/jaxws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
            targetNamespace="http://uniba.de/dsg/jaxws/">
 
-    <xs:element name="Cancellor" type="tns:cancellor"/>
+    <xs:element name="Chancellor" type="tns:chancellor"/>
 
-    <xs:element name="getCancellors" type="tns:getCancellors"/>
+    <xs:element name="getChancellors" type="tns:getChancellors"/>
 
-    <xs:element name="getCancellorsResponse" type="tns:getCancellorsResponse"/>
+    <xs:element name="getChancellorsResponse" type="tns:getChancellorsResponse"/>
 
-    <xs:complexType name="getCancellors">
+    <xs:complexType name="getChancellors">
         <xs:sequence>
             <xs:element name="from" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="to" type="xs:dateTime" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="getCancellorsResponse">
+    <xs:complexType name="getChancellorsResponse">
         <xs:sequence>
-            <xs:element name="cancellor" type="tns:cancellor" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="chancellor" type="tns:chancellor" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="cancellor">
+    <xs:complexType name="chancellor">
         <xs:sequence>
             <xs:element name="name" type="xs:string" minOccurs="0"/>
             <xs:element name="party" type="xs:string" minOccurs="0"/>

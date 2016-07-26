@@ -11,6 +11,6 @@ import javax.jws.WebService;
 @WebService(targetNamespace = "http://uniba.de/dsg/jaxws/")
 public interface History {
 	@WebMethod
-	@WebResult(name="cancellor")
-	List<Cancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException;
+	@WebResult(name="chancellor")
+	List<Chancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException;
 }

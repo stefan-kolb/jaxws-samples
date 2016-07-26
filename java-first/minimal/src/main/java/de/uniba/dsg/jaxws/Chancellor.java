@@ -2,15 +2,15 @@ package de.uniba.dsg.jaxws;
 
 import java.util.Date;
 
-public class Cancellor {
+public class Chancellor {
     private String name;
     private String party;
     private Date from;
     private Date to;
 
-    public Cancellor() { }
+    public Chancellor() { }
 
-    public Cancellor(String name, String party, Date from, Date to) {
+    public Chancellor(String name, String party, Date from, Date to) {
         this.name = name;
         this.party = party;
         this.from = from;

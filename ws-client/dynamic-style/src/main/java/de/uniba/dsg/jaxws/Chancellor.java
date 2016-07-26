@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name = "Cancellor")
+@XmlRootElement(name = "Chancellor")
 @XmlType(propOrder = { "name", "party", "from", "to" }, namespace="http://uniba.de/dsg/jaxws/")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Cancellor {
+public class Chancellor {
 	private String name;
 	private String party;
 	private Date from;
 	private Date to;
 	
-	public Cancellor() {}
+	public Chancellor() {}
 	
-	public Cancellor(String name, String party, Date from, Date to) {
+	public Chancellor(String name, String party, Date from, Date to) {
 		this.name = name;
 		this.party = party;
 		this.from = from;
