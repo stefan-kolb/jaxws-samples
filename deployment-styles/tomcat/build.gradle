@@ -3,5 +3,5 @@ apply plugin:'war'
 dependencies {
     // Do not bundle the JAX-WS implementation to production apps!
     // Instead copy the dependencies into the tomcat lib folder.
-    compile 'com.sun.xml.ws:jaxws-rt:2.2.8'
+    compile 'com.sun.xml.ws:jaxws-rt:2.2.10'
 }
