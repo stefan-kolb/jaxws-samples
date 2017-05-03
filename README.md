@@ -4,6 +4,7 @@
 
 The build files use the [Gradle Cargo plugin](https://github.com/bmuschko/gradle-cargo-plugin) for auto-deployment to Glassfish 4.
 For the available Gradle tasks see [the documentation](https://github.com/bmuschko/gradle-cargo-plugin#tasks). 
+Please see the [cargo documentation](https://codehaus-cargo.github.io/cargo/Glassfish+4.x.html) for the default configuration of the used application server.
 The plugin will download and install the server automatically for each project. The admin interface can be found at `http://admin:adminadmin@localhost:4848`. If not used in conjunction with `gradle cargoRunLocal`, make sure all deployment artifacts were created before starting the server.
 When Gradle is installed on your system all tasks can be run directly from the sub-project's root folder, e.g. `gradle war`. Otherwise you can use the Gradle wrapper from the root and use an absolute path like `gradlew java-first:minimal:war`.
 
