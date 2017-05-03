@@ -9,7 +9,7 @@ buildscript {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.14.1'
+    gradleVersion = '3.5'
 }
 
 allprojects {
@@ -35,7 +35,7 @@ gradle.projectsEvaluated {
 
             local {
                 installer {
-                    installUrl = 'http://download.java.net/glassfish/4.1.1/release/glassfish-4.1.1.zip'
+                    installUrl = 'http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip'
                     downloadDir = file("$buildDir/download")
                     extractDir = file("$buildDir/extract")
                 }
