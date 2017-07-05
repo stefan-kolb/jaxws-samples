@@ -25,10 +25,12 @@ Simple bottom-up JAX-WS example. The Web service returns German chancellors that
 
 ### Minimal
 Minimal example for exposing a Web service with JAX-WS annotations.
+The project can also be run as standalone service via `gradlew java-first:minimal:run`.
 The Web service should be available at `http://localhost:8080/minimal/HistoryService`.
 
 ### Custom
 In this example more annotations are used to override default conventions of JAX-WS, e.g. the naming of parameters or return types.
+The project can also be run as standalone service via `gradlew java-first:custom:run`.
 The Web service should be available at `http://localhost:8080/custom/HistoryService`.
 
 ## Deployment-styles
@@ -43,7 +45,9 @@ Tomcat needs additional deployment descriptors and the JAX-WS implementation in 
 Build with `gradle war` and manually deploy to a Tomcat instance.
 
 ### Standalone
-The standalone project uses `javax.xml.ws.Endpoint` to run a server instance. It is the simplest way to expose an experimental JAX-WS Web service. The Web service should be available at `http://localhost:8080/standalone/GreetingsService`.
+The standalone project uses `javax.xml.ws.Endpoint` to run a server instance. It is the simplest way to expose an experimental JAX-WS Web service. 
+Run the project via `gradlew deployment-styles:standalone:run`.
+The Web service should be available at `http://localhost:8080/standalone/GreetingsService`.
 
 ## WS-client
 Demonstrates the usage of the *wsimport* tool to generate Web Services interfaces and clients using a top-down approach. First run the [*java-first:custom*](#java-first) project in order to be able to access the service with the wsimport client. Use `gradle run` to run the web services test client.

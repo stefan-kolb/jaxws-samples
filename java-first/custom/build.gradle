@@ -3,3 +3,11 @@ apply plugin: 'war'
 dependencies {
     compile 'joda-time:joda-time:2.9.4'
 }
+
+apply plugin:'application'
+
+mainClassName = "de.uniba.dsg.jaxws.HistoryEndpoint"
+
+run {
+    standardInput = System.in
+}
