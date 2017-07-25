@@ -14,7 +14,7 @@ This also works for IntelliJ IDEA with `gradlew idea`.
 ## Contents
 - [Java-first Web Services](#java-first)
 - [Deployment Styles](#deployment-styles)
-- [WSDL-first Web Services](#ws-client)
+- [WSDL-first Web Services & Client Generation](#ws-client)
 - [Data Type Mapping](#type-mapping)
 - [Method Overloading](#method-overloading)
 - [Exceptions](#exceptions)
