@@ -23,7 +23,7 @@ public class DemoWSClient {
 
 		LocalDate start = new LocalDate(1949, 1, 1);
 		LocalDate end = new LocalDate(2014, 1, 1);
-		List<Chancellor> chancellors = proxy.getCancellors(start.toDate(), end.toDate());
+		List<Chancellor> chancellors = proxy.getChancellors(start.toDate(), end.toDate());
 
         System.out.println("Accessing Web service...");
         System.out.println("Getting chancellors from " + start.getYear() + " to " + end.getYear());
