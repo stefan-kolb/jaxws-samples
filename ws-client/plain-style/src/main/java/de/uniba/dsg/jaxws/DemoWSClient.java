@@ -22,13 +22,13 @@ public class DemoWSClient {
 		XMLGregorianCalendar from = DatatypeFactory.newInstance().newXMLGregorianCalendar(start);
 		XMLGregorianCalendar to = DatatypeFactory.newInstance().newXMLGregorianCalendar(end);
 		// Input message
-		GetChancellors in = new ObjectFactory().createGetCancellors();
+		GetChancellors in = new ObjectFactory().createGetChancellors();
 		in.setFrom(from);
 		in.setTo(to);
 		// Output message
 		History historyService = new HistoryService().getHistoryPort();
-		GetCancellorsResponse out = historyService.getChancellors(in);
-		List<Chancellor> chancellors = out.getCancellor();
+		GetChancellorsResponse out = historyService.getChancellors(in);
+		List<Chancellor> chancellors = out.getChancellor();
 
         System.out.println("Accessing Web service...");
         System.out.println("Getting chancellors from " + from.getYear() + " to " + to.getYear());

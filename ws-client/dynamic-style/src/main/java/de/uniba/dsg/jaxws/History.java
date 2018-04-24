@@ -12,5 +12,5 @@ import javax.jws.WebService;
 public interface History {
 	@WebMethod
 	@WebResult(name="chancellor")
-	List<Chancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException;
+	List<Chancellor> getChancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException;
 }

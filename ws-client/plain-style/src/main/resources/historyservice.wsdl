@@ -11,22 +11,22 @@
                         schemaLocation="historyservice.xsd"/>
         </xsd:schema>
     </types>
-    <message name="getCancellors">
-        <part name="parameters" element="tns:getCancellors"/>
+    <message name="getChancellors">
+        <part name="parameters" element="tns:getChancellors"/>
     </message>
-    <message name="getCancellorsResponse">
-        <part name="parameters" element="tns:getCancellorsResponse"/>
+    <message name="getChancellorsResponse">
+        <part name="parameters" element="tns:getChancellorsResponse"/>
     </message>
     <portType name="History">
-        <operation name="getCancellors">
-            <input wsam:Action="http://uniba.de/dsg/jaxws/History/getCancellorsRequest" message="tns:getCancellors"/>
-            <output wsam:Action="http://uniba.de/dsg/jaxws/History/getCancellorsResponse"
-                    message="tns:getCancellorsResponse"/>
+        <operation name="getChancellors">
+            <input wsam:Action="http://uniba.de/dsg/jaxws/History/getChancellorsRequest" message="tns:getChancellors"/>
+            <output wsam:Action="http://uniba.de/dsg/jaxws/History/getChancellorsResponse"
+                    message="tns:getChancellorsResponse"/>
         </operation>
     </portType>
     <binding name="HistoryPortBinding" type="tns:History">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-        <operation name="getCancellors">
+        <operation name="getChancellors">
             <soap:operation soapAction=""/>
             <input>
                 <soap:body use="literal"/>
@@ -38,7 +38,7 @@
     </binding>
     <service name="HistoryService">
         <port name="HistoryPort" binding="tns:HistoryPortBinding">
-            <soap:address location="http://mr-10-2012-04-n:8080/custom/HistoryService"/>
+            <soap:address location="http://localhost:8080/custom/HistoryService"/>
         </port>
     </service>
 </definitions>
