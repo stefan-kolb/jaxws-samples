@@ -7,5 +7,5 @@ run {
 }
 
 dependencies {
-    compile 'joda-time:joda-time:2.9.4'
+    compile 'joda-time:joda-time:2.10.1'
 }
