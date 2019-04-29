@@ -20,6 +20,10 @@ allprojects {
     repositories {
         jcenter()
     }
+
+    dependencies {
+        compile group: 'com.sun.xml.ws', name: 'rt', version: '2.3.2'
+    }
 }
 
 def webProjects() {
