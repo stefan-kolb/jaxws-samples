@@ -6,7 +6,7 @@ import javax.xml.ws.Endpoint;
 
 public class FaultEndpoint {
     public static void main(String[] args) throws IOException {
-        String url = "http://localhost:8080/jaxws-exception/FaultService";
+        String url = "http://localhost:8080/java-exception/FaultService";
 
         System.out.println("Starting Web Service Endpoint...");
         Endpoint endpoint = Endpoint.publish(url, new Fault());
