@@ -1,3 +1,4 @@
+apply plugin: 'war'
 apply plugin:'application'
 
 mainClassName = "de.uniba.dsg.soa.GreetingsEndpoint"
