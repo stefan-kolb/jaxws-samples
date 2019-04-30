@@ -11,7 +11,7 @@ configurations {
 }
 
 dependencies {
-    jaxws 'com.sun.xml.ws:jaxws-tools:2.2.10'
+    jaxws group: 'com.sun.xml.ws', name: 'jaxws-tools', version: '2.3.2'
 }
 
 project.ext {

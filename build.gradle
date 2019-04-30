@@ -4,12 +4,12 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.bmuschko:gradle-cargo-plugin:2.2.2'
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.6.1'
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+wrapper {
+    gradleVersion = '5.4.1'
 }
 
 allprojects {
@@ -19,6 +19,10 @@ allprojects {
 
     repositories {
         jcenter()
+    }
+
+    dependencies {
+        compile group: 'com.sun.xml.ws', name: 'rt', version: '2.3.2'
     }
 }
 
@@ -35,7 +39,7 @@ gradle.projectsEvaluated {
 
             local {
                 installer {
-                    installUrl = 'http://download.java.net/glassfish/4.1.2/release/glassfish-4.1.2.zip'
+                    installUrl = 'https://download.oracle.com/glassfish/4.1.2/release/glassfish-4.1.2.zip'
                     downloadDir = file("$buildDir/download")
                     extractDir = file("$buildDir/extract")
                 }
