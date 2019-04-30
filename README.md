@@ -51,6 +51,7 @@ The Web service should be available at `http://localhost:8080/standalone/Greetin
 **Notice**: The plugin used in this example only runs reliably with JDK 8. With a newer JDK, there might be problems.  
 To deploy the sample to Glassfish run `gradle cargoRunLocal`.
 The Web service should be available at `http://localhost:8080/jsr109/GreetingsService`.
+As an alternative, you can setup a local Glassfish sever manually, and deploy the `war`-file there.
 
 ### Tomcat
 Tomcat needs additional deployment descriptors and the JAX-WS implementation in order to run JAX-WS Web services.

@@ -30,7 +30,7 @@ public class History {
 	}
 	
 	@WebMethod
-	public List<Chancellor> getCancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException {
+	public List<Chancellor> getChancellors(@WebParam(name="from") Date from, @WebParam(name="to") Date to) throws IllegalArgumentException {
 		if(from == null || to == null) {
 			throw new IllegalArgumentException("Dates should not be null!");
 		}
